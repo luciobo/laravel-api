@@ -6,7 +6,7 @@
             <h1 class="">Lista Fumetti</h1>
         </div>
         <div class="pb-5 text-primary text-center">
-            <a href="{{ route('project.create') }}" class="btn btn-primary">
+            {{-- <a href="{{ route('admin.project.create') }}" class="btn btn-primary"> --}}
                 <i class="fas fa-plus"></i>Aggiungi</a>
 
         </div>
@@ -42,17 +42,17 @@
                                 Occore quindi passare il name delle rotta che vogliano.
                                 Siccome la rotta "show" si aspetta un parametro dinamico dell'uri, obbligatorio,
                                 questo lo passiamo come secondo argomento della funzione route(nome_rotta, valore_parametro_dinamico) --}}
-                                <a href="{{ route('project.show', $project->id) }}" class="btn btn-link">
+                                <a href="{{ route('admin.project.show', $project->id) }}" class="btn btn-link">
                                     <i class="bi bi-eye-fill"></i></i>
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ route('project.edit', $project->id) }}" class="btn btn-link">
+                                <a href="{{ route('admin.project.edit', $project->id) }}" class="btn btn-link">
                                     <i class="bi bi-pen-fill"></i></i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('project.destroy', $project->id) }}" method="POST">
+                                <form action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
                                     @csrf()
                                     @method('delete')
                                     <button class="btn btn-danger">

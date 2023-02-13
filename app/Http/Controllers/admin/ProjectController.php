@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 use App\Models\Project;
-use Illuminate\Http\Request;
+
 
 class ProjectController extends Controller
 {
@@ -12,7 +15,7 @@ class ProjectController extends Controller
     {
         $project = Project::all();
 
-        return view("project.index", [
+        return view("admin.project.index", [
             "project" => $project
         ]);
     }
@@ -20,7 +23,7 @@ class ProjectController extends Controller
 
     public function create()
     {
-        return view("project.create");
+        return view("admin.project.create");
     }
 
 
@@ -46,13 +49,13 @@ class ProjectController extends Controller
 
 
 
-        return redirect()->route("project.show", $project->id);
+        return redirect()->route("admin.project.show", $project->id);
     }
 
 
     public function show(Project $project)
     {
-        return view("project.show", [
+        return view("admin.project.show", [
             "project" => $project
         ]);
     }
@@ -60,7 +63,7 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        return view("project.edit", [
+        return view("admin.project.edit", [
             "project" => $project
             
         ]);
@@ -76,7 +79,7 @@ class ProjectController extends Controller
         $project->update($data);
         $project->save();
 
-        return redirect()->route("project.show", $project->id);
+        return redirect()->route("admin.project.show", $project->id);
     }
 
 
@@ -88,6 +91,6 @@ class ProjectController extends Controller
         $project->delete();
 
         // Un volta eliminato l'elemento dalla tabella, dobbiamo reindirizzare l'utente da qualche parte.
-        return redirect()->route("project.index");
+        return redirect()->route("admin.project.index");
     }
 }
