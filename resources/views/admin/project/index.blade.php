@@ -3,7 +3,7 @@
 @section('content')
     <section class="container">
         <div class="py-5 text-primary text-center">
-            <h1 class="">Lista Fumetti</h1>
+            <h1 class="">Lista Progetti</h1>
         </div>
         <div class="pb-5 text-primary text-center">
             <a href="{{ route('admin.projects.create') }}" class="btn btn-primary">
@@ -52,7 +52,7 @@
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
+                                <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
                                     @csrf()
                                     @method('delete')
                                     <button class="btn btn-danger">

@@ -79,7 +79,7 @@ class ProjectController extends Controller
         $project->update($data);
         $project->save();
 
-        return redirect()->route("admin.project.show", $project->id);
+        return redirect()->route("admin.projects.show", $project->id);
     }
 
 
@@ -91,6 +91,6 @@ class ProjectController extends Controller
         $project->delete();
 
         // Un volta eliminato l'elemento dalla tabella, dobbiamo reindirizzare l'utente da qualche parte.
-        return redirect()->route("admin.project.index");
+        return redirect()->route("admin.projects.index");
     }
 }

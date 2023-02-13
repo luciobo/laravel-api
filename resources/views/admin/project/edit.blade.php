@@ -3,19 +3,33 @@
 @section('content')
     <div class="text-center">
 
-        <h1 class="py-5">comics #{{ $comics->id }}</h1>
+        <h1 class="py-5">comics #{{ $project->id }}</h1>
 
         <div class="row d-flex justify-content-center">
             <div class="col-6">
                 {{-- qui la rotta per ocllegare il form al comic controller  --}}
-                <form action="/comics/{{ $comics->id }}" method="POST">
+                <form action="/comics/{{ $project->id }}" method="POST">
                     @csrf
 
                     @method('PUT')
 
+                    {{-- name --}}
                     <div class="mb-3">
-                        <label class="form-label">Titolo</label>
-                        <input type="text" class="form-control" name="title" value="{{ $comics->title }}">
+                        <label class="form-label">Nome Progetto</label>
+                        <input type="text"
+                            class="form-control @error('name') is-invalid @elseif(old('name')) is-valid @enderror"
+                            name="name">
+
+                        @error('name')
+                            <div class="invalid-feedback">
+                                hai toppato
+                            </div>
+                        @elseif(old('name'))
+                            {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
+                            <div class="valid-feedback">
+                                Bravo
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Descrizione</label>

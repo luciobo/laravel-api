@@ -4,33 +4,28 @@
     <div class="row d-flex justify-content-center">
         <div class="col-6 rounded-5 bg-success">
             <div class="d-flex justify-content-end p-4">
-                <a class="" href="{{ route('comics.index') }}">
-                    <button type="button" class="btn btn-outline-light rounded-5">
-                        <i class="fa-solid fa-x"></i>
+                <a class="" href="{{ route('admin.projects.index') }}">
+                    <button type="button" class="btn btn-outline-light border-0 fs-3">
+                        <i class="bi bi-x-circle"></i>
                     </button>
                 </a>
             </div>
-            <h1>{{ $comics->title }} (#{{ $comics->id }})</h1>
-            <p class="l">{{ $comics->description }}</p>
+            <h1>{{ $project->name }} (#{{ $project->id }})</h1>
+            <p class="l">{{ $project->description }}</p>
             <ul class="m-0">
-                <li class="d-flex justify-content-center"><img class="w-25 py-2" src="{{ $comics->thumb }}"</li>
-                <li><strong>Prezzo:</strong> {{ $comics->price }}</li>
-                <li><strong>serie:</strong> {{ $comics->series }}</li>
-                <li><strong>Immissione In vendita:</strong> {{ $comics->sale_date }}</li>
-                <li><strong>Tipologia:</strong> {{ $comics->type }}</li>
-                <li><strong>Data creazione:</strong> {{ $comics->created_at }}</li>
-                <li><strong>Data ultima modifica:</strong> {{ $comics->updated_at }}</li>
+                <li class="d-flex justify-content-center"><img class="w-25 py-2" src="{{ $project->cover_img }}"</li>
+                <li><strong>Prezzo:</strong> {{ $project->github_link }}</li>
             </ul>
             <div class="d-flex justify-content-around p-3">
                 <div>
-                    <a class="" href="{{ route("comics.edit", $comics->id) }}">
+                    <a class="" href="{{ route("admin.projects.edit", $project->id) }}">
                         <button type="button" class="btn btn-outline-light">modifica
                             <i class="bi bi-pen-fill ps-2"></i></i>
                         </button>
                     </a>
                 </div>
                 <div>
-                    <form action="{{ route('comics.destroy', $comics->id) }}" method="POST">
+                    <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
                         @csrf()
                         @method('delete')
                         <button class="btn btn-danger">Cancella
