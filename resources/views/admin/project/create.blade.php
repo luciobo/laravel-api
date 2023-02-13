@@ -64,7 +64,7 @@
                         @enderror
                     </div>
 
-                    {{-- lionk github --}}
+                    {{-- link github --}}
                     <div class="mb-3">
                         <label class="form-label">Link GitHub</label>
                         <input type="text"
