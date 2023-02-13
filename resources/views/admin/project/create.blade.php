@@ -8,7 +8,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-6">
                 {{-- qui la rotta per ocllegare il form al comic controller  --}}
-                <form action="{{ route('admin.project.store') }}" method="POST">
+                <form action="{{ route('admin.projects.store') }}" method="POST">
                     @csrf
                     {{-- title --}}
                     <div class="mb-3">
