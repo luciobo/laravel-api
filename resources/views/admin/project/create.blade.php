@@ -14,14 +14,14 @@
                     <div class="mb-3">
                         <label class="form-label">Titolo</label>
                         <input type="text"
-                            class="form-control @error('title') is-invalid @elseif(old('title')) is-valid @enderror"
+                            class="form-control @error('name') is-invalid @elseif(old('name')) is-valid @enderror"
                             name="title">
 
-                        @error('title')
+                        @error('name')
                             <div class="invalid-feedback">
                                 hai toppato
                             </div>
-                        @elseif(old('title'))
+                        @elseif(old('name'))
                             {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
                             <div class="valid-feedback">
                                 Bravo
@@ -49,94 +49,41 @@
                     <div class="mb-3">
                         <label class="form-label">Immagine</label>
                         <input type="text"
-                            class="form-control @error('thumb') is-invalid @elseif(old('thumb')) is-valid @enderror"
-                            name="thumb">
+                            class="form-control @error('cover_img') is-invalid @elseif(old('cover_img')) is-valid @enderror"
+                            name="cover_img">
 
-                        @error('thumb')
+                        @error('cover_img')
                             <div class="invalid-feedback">
                                 hai toppato
                             </div>
-                        @elseif(old('thumb'))
+                        @elseif(old('cover_img'))
                             {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
                             <div class="valid-feedback">
                                 Bravo
                             </div>
                         @enderror
                     </div>
-                    {{-- price --}}
-                    <div class="mb-3">
-                        <label class="form-label">Prezzo</label>
-                        <input type="number" 
-                        step=".01" 
-                        class="form-control @error('price') is-invalid @elseif(old('price')) is-valid @enderror" 
-                        name="price">
-
-                        @error('price')
-                            <div class="invalid-feedback">
-                                hai toppato
-                            </div>
-                        @elseif(old('price'))
-                            {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
-                            <div class="valid-feedback">
-                                Bravo
-                            </div>
-                        @enderror
-                    </div>
-                    {{-- serires --}}
+                    
+                    {{-- lionk github --}}
                     <div class="mb-3">
                         <label class="form-label">Serie</label>
                         <input type="text"
-                            class="form-control @error('series') is-invalid @elseif(old('series')) is-valid @enderror"
-                            name="series">
+                            class="form-control @error('github_link') is-invalid @elseif(old('github_link')) is-valid @enderror"
+                            name="github_link">
 
-                        @error('series')
+                        @error('github_link')
                             <div class="invalid-feedback">
                                 hai toppato
                             </div>
-                        @elseif(old('series'))
+                        @elseif(old('github_link'))
                             {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
                             <div class="valid-feedback">
                                 Bravo
                             </div>
                         @enderror
                     </div>
-                    {{-- sale date --}}
-                    <div class="mb-3">
-                        <label class="form-label">Data prima vendita</label>
-                        <input type="date" 
-                        class="form-control @error('sale_date') is-invalid @elseif(old('sale_date')) is-valid @enderror" 
-                        name="sale_date">
-
-                        @error('sale_date')
-                            <div class="invalid-feedback">
-                                hai toppato
-                            </div>
-                        @elseif(old('sale_date'))
-                            {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
-                            <div class="valid-feedback">
-                                Bravo
-                            </div>
-                        @enderror
-                    </div>
-                    {{-- button add comics --}}
-                    <div class="mb-3">
-                        <label class="form-label">Tipologia</label>
-                        <input type="text"
-                            class="form-control @error('type') is-invalid @elseif(old('type')) is-valid @enderror"
-                            name="type">
-
-                        @error('type')
-                            <div class="invalid-feedback">
-                                hai toppato
-                            </div>
-                        @elseif(old('type'))
-                            {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
-                            <div class="valid-feedback">
-                                Bravo
-                            </div>
-                        @enderror
-                    </div>
-                    <button class="btn btn-primary" type="submit">Aggiungi Comics</button>
+                    {{-- button add project --}}
+                    <button class="btn btn-primary" type="submit">Aggiungi Progetto</button>
                 </form>
             </div>
         </div>

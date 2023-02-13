@@ -30,7 +30,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            "name" => "required|string|min:2|max:255",
+            "name" => "required|string|min:1|max:255",
             "description" => "required|string",
             "cover_img" => "required|string|url",
             "github_link" => "required|min:1|max:255",
