@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-teme="dark">
 
 <head>
     <meta charset="utf-8">
@@ -45,6 +45,7 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                            <a class="nav-link" href="{{url('public/index') }}">{{ __('Progetti') }}</a>
                         </li>
                     </ul>
 
