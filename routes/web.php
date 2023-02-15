@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Admin\ProjectController as PublicProjectController;
+use App\Http\Controllers\Public\ProjectController as PublicProjectController;
 
 
 
@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('public/index', [PublicProjectController::class, "index"])->name("Progetti");
+Route::get('public/index', [PublicProjectController::class, "index"])->name("Public");
 
 Route::get('admin/dashboard', function () {
     return view('dashboard');

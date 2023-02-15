@@ -45,7 +45,9 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
-                            <a class="nav-link" href="{{url('public/index') }}">{{ __('Progetti') }}</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{route('Public') }}">{{ __('Progetti') }}</a>
                         </li>
                     </ul>
 

@@ -33,7 +33,7 @@ class ProjectController extends Controller
             "name" => "required|string|min:1|max:255",
             "description" => "required|string",
             "cover_img" => "required|string|url",
-            "github_link" => "required|min:1|max:255",
+            "github_link" => "required|string|min:1|max:255",
 
         ]);
         // $data = $request->all();
@@ -49,7 +49,7 @@ class ProjectController extends Controller
 
 
 
-        return redirect()->route("admin.project.show", $project->id);
+        return redirect()->route("admin.projects.show", $project->id);
     }
 
 
