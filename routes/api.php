@@ -16,10 +16,10 @@ use App\Http\Controllers\api\ProjectController;
 */
 
 // sarà raggiungibile tramite /api/posts
-Route::get("/Project", [ProjectController::class, "index"]);
+Route::get("/projects", [ProjectController::class, "index"]);
 
 // sarà raggiungibile tramite /api/posts/4
-Route::get("/Project/{Project}", [ProjectController::class, "show"]);
+Route::get("/projects/{project}", [ProjectController::class, "show"]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
